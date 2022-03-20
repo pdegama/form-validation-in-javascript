@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(79, 4, 255);
+  background: linear-gradient(322deg, rgb(79, 4, 255) 0%, rgb(159, 124, 255) 100%);
+}
+
+.main-warp {
+  width: 450px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.274);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-warp {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.login-warp * {
+  width: 90%;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: rgb(79, 4, 255);
+  font-weight: lighter;
+}
+
+.form {
+  margin: 10px auto;
+  width: 90%;
+}
+
+.form * {
+  width: 100%;
+}
+
+.form .form-con {
+  margin: 8px 0;
+}
+
+.form>.form-con>label {
+  font-size: 1rem;
+  color: rgb(32, 32, 32);
+}
+
+.form>.form-con>input {
+  margin-top: 3px !important;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  outline: 0;
+  transition: .5s;
+  border: 1px solid rgb(159, 124, 255);
+  border-radius: 2px;
+}
+
+.form>.form-con>input:active,.form>.form-con>input:focus{
+  border: 1px solid  rgb(79, 4, 255);
+}
+
+.form>.form-con>button {
+  margin-top: 3px !important;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  outline: 0;
+  border: none;
+  background: rgb(79, 4, 255);
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.form>.form-con>button:hover{
+  background: rgb(109, 46, 255);
+}
+
+.form>.form-con>button:active{
+  background: rgb(159, 124, 255);
+}
+
+.form>.form-con>button[disabled]{
+  background: rgb(159, 124, 255);
+  cursor: auto;
+}
+
+.form-error{
+  color: rgb(255, 67, 67);
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 700px) {
+
+  .bgz {
+    display: none;
+  }
+
+  .main-warp {
+    max-width: 350px;
+  }
+
+}

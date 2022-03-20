@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-warp">
+        <div class="login-warp">
+            <span class="title">Register</span>
+            <form class="form">
+                <div class="form-con">
+                    <label for="u_fullname">Fullname</label>
+                    <input type="text" placeholder="Fullname" id="u_fullname">
+                    <span class="form-error" id="u_err_fullname"></span>
+                </div>
+                <div class="form-con">
+                    <label for="u_email">Email</label>
+                    <input type="text" placeholder="Email" id="u_email">
+                    <span class="form-error" id="u_err_email"></span>
+                </div>
+                <div class="form-con">
+                    <label for="u_password">Password</label>
+                    <input type="password" placeholder="Password" id="u_password">
+                    <span class="form-error" id="u_err_password"></span>
+                </div>
+                <div class="form-con">
+                    <label for="u_phone">Phone No.</label>
+                    <input type="text" placeholder="Phone No" id="u_phone">
+                    <span class="form-error" id="u_err_phone"></span>
+                </div>
+
+                <div class="form-con">
+                    <button id="form_go" disabled type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="logic.js"></script>
+
+</body>
+
+</html>
