@@ -1,12 +1,14 @@
 const uFullname = document.getElementById("u_fullname")
 const uEmail = document.getElementById("u_email")
 const uPass = document.getElementById("u_password")
+const uPass2 = document.getElementById("u_password2")
 const uPhone = document.getElementById("u_phone")
 const uSid = document.getElementById("u_sid")
 
 const eFullname = document.getElementById("u_err_fullname")
 const eEmail = document.getElementById("u_err_email")
 const ePassword = document.getElementById("u_err_password")
+const ePassword2 = document.getElementById("u_err_password2")
 const ePhone = document.getElementById("u_err_phone")
 const eSid = document.getElementById("u_err_sid")
 
@@ -62,6 +64,7 @@ uEmail.onkeyup = (e) => {
 }
 
 uPass.onkeyup = (e) => {
+    cReEnterPass(e);
     ePassword.innerHTML = ""
     if (e.target.value !== '' && e.target.value) {
         let c1, c2, c3, c4
@@ -109,6 +112,25 @@ uPass.onkeyup = (e) => {
     validForm();
 }
 
+uPass2.onkeyup = (e) => {
+    cReEnterPass(e)
+}
+
+const cReEnterPass = (e) => {
+    ePassword2.innerHTML = ""
+    if (uPass2.value !== '' && uPass2.value) {
+        if (uPass.value === uPass2.value) {
+            uPass2.fValid = true;
+        } else {
+            ePassword2.innerHTML = `Password Not Match`
+            uPass2.fValid = false;
+        }
+    } else {
+        uPass2.fValid = false;
+    }
+    validForm();
+}
+
 uPhone.onkeyup = (e) => {
     phoneReg = /^(\+\d{1,3}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
     ePhone.innerHTML = ""
@@ -126,7 +148,12 @@ uPhone.onkeyup = (e) => {
 }
 
 const validForm = () => {
-    if (uSid.fValid && uFullname.fValid && uEmail.fValid && uPass.fValid && uPhone.fValid) {
+    if (uSid.fValid &&
+        uFullname.fValid &&
+        uEmail.fValid &&
+        uPass.fValid &&
+        uPass2.fValid &&
+        uPhone.fValid) {
         formGo.removeAttribute("disabled")
     } else {
         formGo.setAttribute("disabled", "")
