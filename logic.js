@@ -169,6 +169,52 @@ uPhone.onkeyup = (e) => {
     validForm();
 }
 
+uIssue.onclick = (e) => {
+    checkIssue(e)
+}
+
+uIssue.onchange = (e) => {
+    checkIssue(e)
+}
+
+const checkIssue = (e) => {
+    eIssue.innerHTML = ""
+    if (e.target.value !== '' && e.target.value) {
+        if (e.target.value !== '') {
+            e.target.fValid = true;
+        } else {
+            eIssue.innerHTML = `Invalid Date`
+            e.target.fValid = false;
+        }
+    } else {
+        e.target.fValid = false;
+    }
+    validForm();
+}
+
+uReturn.onclick = (e) => {
+    checkReturn(e)
+}
+
+uReturn.onchange = (e) => {
+    checkReturn(e)
+}
+
+const checkReturn = (e) => {
+    eReturn.innerHTML = ""
+    if (e.target.value !== '' && e.target.value) {
+        if (e.target.value !== '') {
+            e.target.fValid = true;
+        } else {
+            eReturn.innerHTML = `Invalid Date`
+            e.target.fValid = false;
+        }
+    } else {
+        e.target.fValid = false;
+    }
+    validForm();
+}
+
 const validForm = () => {
     if (uSid.fValid &&
         uBid.fValid &&
@@ -176,7 +222,9 @@ const validForm = () => {
         uEmail.fValid &&
         uPass.fValid &&
         uPass2.fValid &&
-        uPhone.fValid) {
+        uPhone.fValid &&
+        uIssue.fValid &&
+        uReturn.fValid) {
         formGo.removeAttribute("disabled")
     } else {
         formGo.setAttribute("disabled", "")
