@@ -4,6 +4,7 @@ const uPass = document.getElementById("u_password")
 const uPass2 = document.getElementById("u_password2")
 const uPhone = document.getElementById("u_phone")
 const uSid = document.getElementById("u_sid")
+const uBid = document.getElementById("u_bid")
 
 const eFullname = document.getElementById("u_err_fullname")
 const eEmail = document.getElementById("u_err_email")
@@ -11,6 +12,7 @@ const ePassword = document.getElementById("u_err_password")
 const ePassword2 = document.getElementById("u_err_password2")
 const ePhone = document.getElementById("u_err_phone")
 const eSid = document.getElementById("u_err_sid")
+const eBid = document.getElementById("u_err_bid")
 
 const formGo = document.getElementById("form_go")
 
@@ -23,6 +25,21 @@ uSid.onkeyup = (e) => {
             e.target.fValid = true;
         } else {
             eSid.innerHTML = `Student ID Have 15 Characters`
+            e.target.fValid = false;
+        }
+    } else {
+        e.target.fValid = false;
+    }
+    validForm();
+}
+
+uBid.onkeyup = (e) => {
+    eBid.innerHTML = ""
+    if (e.target.value !== '' && e.target.value) {
+        if (e.target.value.length === 6) {
+            e.target.fValid = true;
+        } else {
+            eBid.innerHTML = `Book ID Have 6 Characters`
             e.target.fValid = false;
         }
     } else {
@@ -149,6 +166,7 @@ uPhone.onkeyup = (e) => {
 
 const validForm = () => {
     if (uSid.fValid &&
+        uBid.fValid &&
         uFullname.fValid &&
         uEmail.fValid &&
         uPass.fValid &&
