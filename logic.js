@@ -2,13 +2,32 @@ const uFullname = document.getElementById("u_fullname")
 const uEmail = document.getElementById("u_email")
 const uPass = document.getElementById("u_password")
 const uPhone = document.getElementById("u_phone")
+const uSid = document.getElementById("u_sid")
+
 const eFullname = document.getElementById("u_err_fullname")
 const eEmail = document.getElementById("u_err_email")
 const ePassword = document.getElementById("u_err_password")
 const ePhone = document.getElementById("u_err_phone")
+const eSid = document.getElementById("u_err_sid")
+
 const formGo = document.getElementById("form_go")
 
 document.getElementsByClassName("form")[0].reset()
+
+uSid.onkeyup = (e) => {
+    eSid.innerHTML = ""
+    if (e.target.value !== '' && e.target.value) {
+        if (e.target.value.length === 15) {
+            e.target.fValid = true;
+        } else {
+            eSid.innerHTML = `Student ID Have 15 Characters`
+            e.target.fValid = false;
+        }
+    } else {
+        e.target.fValid = false;
+    }
+    validForm();
+}
 
 uFullname.onkeyup = (e) => {
     nameReg = /^[a-zA-Z ]+$/
@@ -107,7 +126,7 @@ uPhone.onkeyup = (e) => {
 }
 
 const validForm = () => {
-    if (uFullname.fValid && uEmail.fValid && uPass.fValid && uPhone.fValid) {
+    if (uSid.fValid && uFullname.fValid && uEmail.fValid && uPass.fValid && uPhone.fValid) {
         formGo.removeAttribute("disabled")
     } else {
         formGo.setAttribute("disabled", "")
